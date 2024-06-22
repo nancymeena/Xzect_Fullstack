@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Version (Task 6) </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #ccd4da;
+    }
+
+    .header {
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar {
+      padding: 0.5rem 1 rem;
+    }
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .nav-link {
+      padding: 0.5 rem 0.75 rem;
+      margin: 0 15px;
+      color: #2d3748;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #010307;
+    }
+
+    .download-btn {
+      background-color: #4299e1;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .download-btn:hover {
+      background-color: #0e579b;
+      color: #fafafb;
+    }
+
+    .hero {
+      background-color: #fafafb;
+      color: #0b0505;
+      padding: 50px 20px 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 17px;
+      margin-bottom: 40px;
+      color: #4a5568;
+    }
+
+    .hero-content .btn {
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: 700;
+      margin-right: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .hero-content .btn-primary {
+      background-color: #4299e1;
+      color: #ffffff;
+    }
+
+    .hero-content .btn-primary:hover {
+      background-color: #3182ce;
+    }
+
+    .hero-content .btn-outline-primary {
+      background-color: #ffffff;
+      color: #4299e1;
+      border: 2px solid #4299e1;
+    }
+
+    .hero-content .btn-outline-primary:hover {
+      background-color: #4299e1;
+      color: #ffffff;
+    }
+
+    .features h1 {
+      font-size: 15px;
+      font-weight: 500;
+      color: #4299e1;
+    }
+
+    .features h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .features p {
+      color: #718096;
+      margin-bottom: 40px;
+    }
+
+    .feature-item {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 0px;
+    }
+
+    .feature-item svg {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #4299e1;
+    }
+
+    .features2-image {
+      display: block;
+      max-width: 65%;
+      height: auto;
+    }
+
+    .features2-content h1 {
+      font-size: 15px;
+      font-weight: 300;
+      color: #4299e1;
+      margin-bottom: 10px;
+      margin-left:25px;
+    }
+
+    .features2-content h2 {
+      font-size: 35px;
+      margin-left: 25px;
+      margin-bottom: 20px;
+    }
+
+    .features2-content .LearnMoreBtn {
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: 400;
+      margin-right: 10px;
+      margin-left: 25px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .features2-content .LearnMoreBtn {
+      background-color: #4299e1;
+      color: #ffffff;
+    }
+
+    .features2-content .LearnMoreBtn:hover {
+      background-color: #3182ce;
+    }
+
+    .features2-item i {
+      font-size: 20px;
+      margin-right: 25px;
+      margin-left: 25px;
+      align-self: flex-start;
+      margin-top: 50px;
+    }
+    
+
+    .features2-item h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .features2-item p {
+      font-size: 17px;
+      color: #4a5568;
+    }
+
+    .app-content h1 {
+      font-size: 15px;
+      font-weight: 300;
+      color: #4299e1;
+      margin-bottom: 5px;
+    }
+ 
+    .app-content h2 {
+      font-size: 25px;
+      font-weight: 300;
+    }
+
+    .app-content h3 {
+      font-size: 15px;
+      font-weight: 100;
+      color: #4a5568;
+    }
+
+    .app-item i {
+      font-size: 24px;
+      margin-right: 15px;
+    }
+    .app-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .app-items {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    .app-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background-color: #1a202c;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container d-flex justify-content-between align-items-center py-3">
+        <a class="navbar-brand" href="#">
+          <img src="C:\Users\nmeen\OneDrive\Desktop\Internship\Full Stack\Task 05\Assets\Images\NancyLogo2.png" alt="Logo" class = "header-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Applications</a>
+            </li>
+          </ul>
+        </div>
+        <div class="ml-auto">
+          <a href="#" class="nav-link download-btn">Download</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="hero-content">
+        <h1>The Best Approach To Interior Design</h1>
+        <p>You're One Stop Finance Empower Platform. Download Our App and Manage All Your Business Expenses.</p>
+        <a href="#" class="btn btn-primary">Get a Free Demo</a>
+        <a href="#" class="btn btn-outline-primary">See Pricing</a>
+      </div>
+      <div class="hero-image">
+        <img src="C:\Users\nmeen\OneDrive\Desktop\Internship\Full Stack\Task 05\Assets\Images\phones_logo.png" alt="Hero Image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id = "services";></section>
+  <section class="features text-center py-5">
+    <div class="container">
+      <h1>SERVICES</h1>
+      <h2>Build a Customer Centric Marketing Strategy</h2>
+      <p>Below are the services and features we provide:</p>
+      <div class="row">
+        <div class="col-sm-3 feature-item">
+          <i class="fas fa-chart-line fa-3x mb-3"></i>
+          <h3>Market Research</h3>
+          <p>Gain a comprehensive understanding of your industry's landscape. </p>
+        </div>
+        <div class="col-sm-3 feature-item">
+          <i class="fas fa-user fa-3x mb-3"></i>
+          <h3>User Experience</h3>
+          <p>Evaluate the viability and potential of new products and services. </p>
+        </div>
+        <div class="col-sm-3 feature-item">
+          <i class="fas fa-bullhorn fa-3x mb-3"></i>
+          <h3>Digital Marketing</h3>
+          <p>Benchmark your performance against competitors and identify the strengths and weaknesses. </p>
+        </div>
+        <div class="col-sm-3 feature-item">
+          <i class="fas fa-search fa-3x mb-3"></i>
+          <h3>SEO Services</h3>
+          <p>Anticipate market shifts and emerging trends to stay ahead of the curve. </p>
+        </div>
+        <div class="col-sm-3 feature-item">
+          <i class="fas fa-lightbulb fa-3x mb-3"></i>
+          <h3>Market Strategy</h3>
+          <p>Our market research services are designed to provide maximum value.</p>
+        </div>
+        <div class="col-sm-3 feature-item">
+          <i class="fas fa-digital-tachograph fa-3x mb-3"></i>
+          <h3>Digital Marketing</h3>
+          <p>Benchmark your performance against competitors and identify the strengths and weaknesses. </p>
+        </div>
+        <div class="col-sm-3 feature-item">
+          <i class="fas fa-handshake fa-3x mb-3"></i>
+          <h3>Affiliate Marketing</h3>
+          <p>We understand that every business is unique and required different insights, plans and strategies. </p>
+        </div>
+        <div class="col-sm-3 feature-item">
+          <i class="fas fa-code fa-3x mb-3"></i>
+          <h3>Website Development </h3>
+          <p>Based on the marketing strategy we apply on your business, we also provide website development services accordingly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features 2 Section -->
+   <section id = "features";></section>
+  <section class="features2 bg-light py-5">
+    <div class="container d-flex align-items-center">
+      <div class="features2-image">
+        <img src="C:\Users\nmeen\OneDrive\Desktop\Internship\Full Stack\Task 05\Assets\Images\CatLaptop.jpg" class = "img-fluid" alt="Features 2 Image">
+      </div>
+      <div class="features2-content">
+        <h1>FEATURES</h1>
+        <h2>Our Distinct Methodology to Ensure Your Success</h2>
+        <a href="#" class="btn LearnMoreBtn">Learn More</a>
+        <div class="features2-items mt-4">
+          <div class="features2-item d-flex">
+            <i class="fas fa-laptop-code"></i>
+            <div class="features2-text">
+              <h3>Manage Your Design and Architecture</h3>
+              <p>Optimize task completion efficiently, managing time and resources, ensuring timely delivery and enhanced efficiency. </p>
+            </div>
+          </div>
+          <div class="features2-item d-flex">
+            <i class="fas fa-network-wired"></i>
+            <div class="features2-text">
+              <h3>Real-Time Presentations</h3>
+              <p>Deliver presentations in real-time with confidence, using strategic insights and resources to manage effectively.</p>
+            </div>
+          </div>
+          <div class="features2-item d-flex">
+            <i class="fas fa-code"></i>
+            <div class="features2-text">
+              <h3>Marketing Strategy</h3>
+              <p>Get the assistance you need regarding Marketing Strategies. We provide it all!</p>
+            </div>
+          </div>
+          <div class="features2-item d-flex">
+            <i class="fas fa-chart-pie"></i>
+            <div class="features2-text">
+              <h3>Market Management</h3>
+              <p>Gain the confidence to effectively oversee markets by leveraging strategic insights and resources to drive success.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Download Section -->
+   <section id = "app";></section>
+    <section class="app bg-light py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="app-content">
+              <h1>APPLICATION</h1>
+              <h2>Ready to Start? Download Our App Right Now:</h2>
+              <h3>With Rible, you can experience the convenience of making secure and hassle-free payments online. Our platform offers a quick and easy way to manage your transactions.</h3>
+            </div>
+            <div class="app-items">
+              <div class="app-item">
+                <i class="fas fa-download fa-2x"></i>
+                <div class="app-text">
+                  <h3>1. Download</h3>
+                </div>
+              </div>
+              <div class="app-item">
+                <i class="fas fa-user-check fa-2x"></i>
+                <div class="app-text">
+                  <h3>2. Setup Your Profile</h3>
+                </div>
+              </div>
+              <div class="app-item">
+                <i class="fas fa-play fa-2x"></i>
+                <div class="app-text">
+                  <h3>3. Start</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 text-center">
+            <div class="app-image">
+              <img src="C:\Users\nmeen\OneDrive\Desktop\Internship\Full Stack\Task 05\Assets\Images\AppSection.jpg" alt="App Image" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Footer Section-->
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Brand. Designed by Nancy Meena for Xzect Labs</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
